@@ -1,0 +1,1 @@
+<% if object.errors.any? %>  <div id="error_explanation">    <div class="alert alert-danger">      <%= error_title(object) %>    </div>    <ul class="list-unstyled alert-danger">    <% object.errors.messages.each do |msg| %>      <li><%= msg[1][0] %></li>    <% end %>    </ul>  </div><% end %>

@@ -1,0 +1,17 @@
+
+<div class="jumbotron index-wrap">
+  <div class="index-banner">
+    <div class="index-banner-wrap">
+		<div class="container white_caption">
+			<h2>你出卷子，我做试题</h2><br>
+			<p>一款让你可以轻松出试卷<br>
+				也能让你认真答题的工具
+			</p>
+	  <br>
+    <% if !sign_in? %>
+      <%=link_to '免费注册',signup_path,class: 'btn btn-success btn-lg'%>
+	  <% end %>
+	  </div>
+	  </div>
+  </div>
+</div>

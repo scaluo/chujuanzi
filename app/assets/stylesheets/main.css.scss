@@ -1,0 +1,74 @@
+@import "bootstrap";
+
+html {
+  overflow-y:scroll;
+}
+body {
+  font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Segoe UI","Microsoft Yahei",Tahoma,Arial,STHeiti,sans-serif;
+  padding-top:50px;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Segoe UI","Microsoft Yahei",Tahoma,Arial,STHeiti,sans-serif;
+}
+
+.white_caption
+{
+  color:#fff;
+}
+
+#nav_logo{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  display: block;
+  padding: 0;
+  width: 200px;
+  height: 54px;
+  overflow: hidden;
+  line-height: 100em;
+  text-indent: 200em;
+  background: url('logo.png') left top no-repeat;
+}
+
+#nav_left{
+  margin-left:180px;
+}
+
+.index-wrap {
+  background: #c5c4c0 url("banner_bg.jpg") center top no-repeat fixed;
+  height:390px;
+}
+
+.index-banner{
+  min-width: 980px;
+  background: url("banner_cmp.png") center top no-repeat;
+}
+
+.index-banner-wrap
+{
+  width: 980px;
+  height: 423px;
+  margin: 0 auto;
+
+}
+
+.single-panel-header{
+  border-bottom: solid 3px #e1e1e1;
+  padding-bottom: 10px;
+  position: relative;
+
+  h3{
+    line-height: 40px;
+    color: #d84c31;
+    font-size: 24px;
+  }
+}
+
+.signle-panel-body{
+  border-top: solid 1px #e1e1e1;
+  margin-top: 5px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
