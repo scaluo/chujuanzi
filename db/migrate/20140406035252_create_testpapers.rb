@@ -7,7 +7,6 @@ class CreateTestpapers < ActiveRecord::Migration
       t.integer :timelimit
       t.boolean :ispublish,null: false,default: false
       t.integer :user_id
-
       t.timestamps
     end
   end

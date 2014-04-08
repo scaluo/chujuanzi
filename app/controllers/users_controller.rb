@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       sign_in @user
       flash[:success] = "注册成功，欢迎来到出卷子社区!"

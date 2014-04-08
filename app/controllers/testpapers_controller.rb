@@ -1,10 +1,24 @@
 class TestpapersController < ApplicationController
+  before_action :signed_in_user
   def new
+    @testpaper = Testpaper.new
   end
 
   def create
+    @testpaper = current_user.testpapers.build(testpaper_params)
+    @testpaper.timelimit = 0
+    if @testpaper.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def index
+  end
+
+  private
+  def testpaper_params
+    params.require(:testpaper).permit(:title,:summary,:securecode)
   end
 end

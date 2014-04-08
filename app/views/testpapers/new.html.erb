@@ -1,0 +1,38 @@
+<% provide(:title,"新建试卷")%>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="single-panel-header">
+      <h3>新建试卷</h3>
+    </div>
+    <div class="signle-panel-body">
+      <%=render 'shared/error_messages',object: @testpaper%>
+    </div>
+    <%= form_for(@testpaper,html: {class: "form-horizontal"}) do |f| %>
+      <div class="form-group">
+        <%=f.label "试卷标题：",class: "col-sm-2 control-label"%>
+        <div class="col-sm-6">
+          <%=f.text_field :title,class: "form-control",placeholder: "输入试卷标题"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <%=f.label "试卷说明：",class: "col-sm-2 control-label"%>
+        <div class="col-sm-6">
+          <%=f.text_area :summary,class: "form-control",rows: 5,placeholder: "输入试卷说明"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%=f.label "试卷安全码：",class: "col-sm-2 control-label"%>
+        <div class="col-sm-6">
+          <%=f.text_field :securecode,class: "form-control",placeholder: "输入试卷安全码"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+          <%= f.submit "创建试卷", class: "btn btn-large btn-primary"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

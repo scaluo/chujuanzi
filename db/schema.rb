@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406035252) do
+ActiveRecord::Schema.define(version: 20140408132004) do
+
+  create_table "questions", force: true do |t|
+    t.integer  "type"
+    t.integer  "score"
+    t.text     "content"
+    t.boolean  "isempty",      default: true,  null: false
+    t.boolean  "isauto",       default: false, null: false
+    t.integer  "testpaper_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "testpapers", force: true do |t|
     t.string   "title"
