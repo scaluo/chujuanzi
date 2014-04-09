@@ -1,5 +1,5 @@
 class TestpapersController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user,:my
   def new
     @testpaper = Testpaper.new
   end
@@ -15,6 +15,10 @@ class TestpapersController < ApplicationController
   end
 
   def index
+  end
+
+  def my
+    @testpapers = current_user.testpapers
   end
 
   private
