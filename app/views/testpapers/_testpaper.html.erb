@@ -1,3 +1,5 @@
 <div>
   <p><%=testpaper.title%></p>
+  <%=link_to "试题",testpaper_questions_path(testpaper)%>
+  <%=link_to "编辑试题",edt_testpaper_questions_path(testpaper)%>
 </div>

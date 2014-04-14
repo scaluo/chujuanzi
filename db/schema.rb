@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140408132004) do
 
   create_table "questions", force: true do |t|
-    t.integer  "type"
+    t.integer  "qtype"
     t.integer  "score"
     t.text     "content"
     t.boolean  "isempty",      default: true,  null: false

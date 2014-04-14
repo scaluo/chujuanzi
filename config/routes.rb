@@ -1,8 +1,12 @@
 Chujuanzi::Application.routes.draw do
+  get "questions/index"
   resources :users
   resources :sessions,only: [:new,:create,:destroy]
   resources :testpapers do
     get 'my',on: :collection
+    resources :questions do
+      get 'edt',on: :collection
+    end
   end
   root to: 'static_pages#home'
   match '/about',to: 'static_pages#about',via: 'get'

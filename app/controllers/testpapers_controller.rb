@@ -8,7 +8,7 @@ class TestpapersController < ApplicationController
     @testpaper = current_user.testpapers.build(testpaper_params)
     @testpaper.timelimit = 0
     if @testpaper.save
-      redirect_to root_path
+      redirect_to edt_testpaper_questions_path(@testpaper)
     else
       render 'new'
     end

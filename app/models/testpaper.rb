@@ -1,6 +1,6 @@
 class Testpaper < ActiveRecord::Base
   belongs_to :user
-  has_many :question,dependent: :destroy
+  has_many :questions,dependent: :destroy
   default_scope -> {order('created_at DESC')}
   validates :user_id,presence: true
   validates_presence_of :title,message: "试卷标题不能为空"
