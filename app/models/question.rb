@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
   belongs_to :testpaper
+  has_many :answers ,dependent: :destroy
   validates_presence_of :content,message: "题目内容不能为空"
 
 

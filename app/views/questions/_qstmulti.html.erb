@@ -1,0 +1,8 @@
+<div class="question-panel">
+    <%=idx%>:<%=question.content%><br>
+    <div class="answer-panel">
+    <% question.answers.each do |answer|%>
+      <p><%=answer.content%></p>
+    <% end %>
+    </div>
+</div>
