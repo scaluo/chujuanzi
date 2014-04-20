@@ -1,0 +1,56 @@
+<!--单选框-->
+<div class="modal fade" id="yesnoModal" tabindex="-1" role="dialog" aria-labelledby="yesnoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="yesnoLabel">判断题</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" name="yesnoFm" id="yesnoFm" action="/testpapers/<%=@testpaper.id%>/questions" method="post">
+          <input type="hidden" name="qtype" value="3">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">题目内容</label>
+            <div class="col-sm-10">
+              <textarea name="content" class="form-control" row="3" placeholder="输入试题内容"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">分数</label>
+            <div class="col-sm-4">
+              <input name="score" class="form-control" value="10"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 radio">
+              <input type="radio" name="optAnswer" id="optanswer1" value="answer1" checked>
+              <label>是</label>
+              <input type="hidden" name="answer1" value="是">
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 radio">
+              <input type="radio" name="optAnswer" id="optanswer2" value="answer2">
+              <label>否</label>
+              <input type="hidden" name="answer2" value="否">
+            </div>
+
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="btnYesno">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal-->

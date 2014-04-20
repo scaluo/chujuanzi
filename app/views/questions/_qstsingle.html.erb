@@ -1,8 +1,14 @@
 <div class="question-panel">
-    <%=idx%>:<%=question.content%>
+    <%=idx%>:<%=question.content%>（<%=question.score%>）
     <div class="answer-panel">
     <% question.answers.each do |answer|%>
-      <p><%=answer.content%></p>
+      <p>
+
+        <%=answer.content%>
+        <% if answer.ischoose %>
+          <font color="red">选中</font>
+        <% end %>
+      </p>
     <% end %>
     </div>
 </div>
