@@ -18,6 +18,11 @@ module ApplicationHelper
   def number_to_hanzi(number)
     hanzi = ["零","一","二","三","四","五","六","七","八","九"]
     str = number.to_s
-    str.split(//).map{|a| hanzi[Integer(a)]}.join("") 
+    str.split(//).map{|a| hanzi[Integer(a)]}.join("")
+  end
+
+  def number_to_alpha(number)
+    aalpha = ("A".."Z").to_a
+    aalpha[number]
   end
 end

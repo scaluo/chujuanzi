@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
+  before_action :signed_in_user,only: [:create,:destroy]
   before_action :current_testpaper
+  before_action :testpaper_user,only: [:destroy,:edt]
   protect_from_forgery :except => [:create]
   def index
     @hashques = Question.questions_group_type(params[:testpaper_id])
@@ -38,8 +40,20 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @question = @testpaper.questions.find(params[:id])
+    if @question
+      @question.delete
+    end
+    redirect_to edt_testpaper_questions_path(@testpaper)
+  end
+
   private
   def current_testpaper
     @testpaper = Testpaper.find(params[:testpaper_id])
+  end
+
+  def testpaper_user
+      redirect_to root_path unless @testpaper.user == current_user
   end
 end

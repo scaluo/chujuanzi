@@ -6,17 +6,18 @@
     </div>
     <% (1..3).each do |idx|%>
       <div class="question-panel-header">
-        <h3><%=number_to_hanzi(idx)%>、<%=get_qst_type_name(idx)%></h3>
+        <h3><%=number_to_hanzi(idx)%>、<%=get_qst_type_name(idx)%>
+          <button type="button" class="btn btn-primary" data-toggle="modal" id="btnNew<%=idx%>" >新增<%=get_qst_type_name(idx)%></button>
+        </h3>
       </div>
       <div id="pnl_qsttype_<%=idx%>">
         <% if !@hashques[idx].nil? %>
           <% @hashques[idx].each_with_index do |question,index|%>
             <%=render partial: get_qst_partial_name(idx),locals: {question: question,idx: index+1}%>
+
             <% end %>
         <% end %>
-        <div>
-          <button type="button" class="btn btn-primary" data-toggle="modal" id="btnNew<%=idx%>" >新增<%=get_qst_type_name(idx)%></button>
-        </div>
+
       </div>
     <% end %>
   </div>

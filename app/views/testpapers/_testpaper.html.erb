@@ -2,4 +2,5 @@
   <p><%=testpaper.title%></p>
   <%=link_to "试题",testpaper_questions_path(testpaper)%>
   <%=link_to "编辑试题",edt_testpaper_questions_path(testpaper)%>
+  <%=link_to "删除试卷",testpaper_path(testpaper),method: :delete,data: { confirm: "确定删除吗?" }%>
 </div>

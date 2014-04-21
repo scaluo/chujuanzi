@@ -1,5 +1,6 @@
 class TestpapersController < ApplicationController
-  before_action :signed_in_user,:my
+  before_action :signed_in_user,only: [:create,:destroy]
+  before_action :currentuser_paper,only: [:destroy]
   def new
     @testpaper = Testpaper.new
   end
@@ -14,6 +15,11 @@ class TestpapersController < ApplicationController
     end
   end
 
+  def destroy
+    @testpaper.destroy
+    redirect_to my_testpapers_path
+  end
+
   def index
   end
 
@@ -24,5 +30,10 @@ class TestpapersController < ApplicationController
   private
   def testpaper_params
     params.require(:testpaper).permit(:title,:summary,:securecode)
+  end
+
+  def currentuser_paper
+    @testpaper = current_user.testpapers.find(params[:id])
+    redirect_to root_path if @testpaper.nil?
   end
 end
