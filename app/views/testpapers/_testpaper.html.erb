@@ -1,6 +1,12 @@
-<div>
-  <p><%=testpaper.title%></p>
-  <%=link_to "试题",testpaper_questions_path(testpaper)%>
-  <%=link_to "编辑试题",edt_testpaper_questions_path(testpaper)%>
-  <%=link_to "删除试卷",testpaper_path(testpaper),method: :delete,data: { confirm: "确定删除吗?" }%>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8"><%=testpaper.title%></div>
+  <div class="col-md-3">
+    <p>
+      <%=link_to "试题",testpaper_questions_path(testpaper),class: "btn btn-primary btn-xs"%>
+      <%=link_to "编辑试题",edt_testpaper_questions_path(testpaper),class: "btn btn-primary btn-xs"%>
+      <%=link_to "删除",testpaper_path(testpaper),method: :delete,class: "btn btn-primary btn-xs",data: { confirm: "确定删除吗?" }%>
+    </p>
+  </div>
+</div>
 </div>
