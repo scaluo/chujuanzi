@@ -1,0 +1,11 @@
+<div class="question-panel">
+    <%=idx%>:<%=question.content%>（<%=question.score%>）
+    <div class="answer-panel">
+    <% question.answers.each_with_index do |answer,index|%>
+      <p>
+        <input type="checkbox" name="chkanswer<%=answer.id%>" id="chkanswer<%=answer.id%>" value="1">&nbsp&nbsp<%=number_to_alpha(index)%>:<%=answer.content%>
+
+      </p>
+    <% end %>
+    </div>
+</div>

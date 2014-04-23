@@ -1,0 +1,11 @@
+<div class="question-panel">
+    <%=idx%>:<%=question.content%>（<%=question.score%>）
+    <div class="answer-panel">
+    <% question.answers.each do |answer|%>
+      <p>
+        <input type="radio" name="optAnswer<%=question.id%>" id="optanswer<%=answer.id%>" value="answer<%=answer.id%>">&nbsp&nbsp<%=answer.content%>
+
+      </p>
+    <% end %>
+    </div>
+</div>
